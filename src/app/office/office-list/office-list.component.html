@@ -1,0 +1,30 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Count of employee</th>
+        <th scope="col">Computer list</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let office of offices">
+        <td>{{ office.id }}</td>
+        <td>{{ office.name }}</td>
+        <td>{{ office.countOfEmployee }}</td>
+        <td>
+          <div *ngFor="let computer of office.computerList">
+            {{ computer }}
+          </div>
+        </td>
+        <td><li class="list-inline-item"><a routerLink="/editoffice/{{office.id}}" class="btn btn-info">Edit</a></li></td>
+        <td><button class="btn btn-danger" (click)="deleteOffice(office)"> Delete</button></td>
+        <!--<td><a href="mailto:{{ office.email }}">{{ office.email }}</a></td>-->
+      </tr>
+      <tr><li class="list-inline-item"><a routerLink="/addoffice" class="btn btn-info">Add office</a></li></tr>
+      </tbody>
+    </table>
+  </div>
+</div>

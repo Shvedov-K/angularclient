@@ -1,0 +1,23 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">CPU</th>
+        <th scope="col">RAM</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let computer of computers">
+        <td>{{ computer.id }}</td>
+        <td>{{ computer.cpu }}</td>
+        <td>{{ computer.ram }}</td>
+        <td><li class="list-inline-item"><a routerLink="/editcomputer/{{computer.id}}" class="btn btn-info">Edit</a></li></td>
+        <td><button class="btn btn-danger" (click)="deleteComputer(computer)"> Delete</button></td>
+      </tr>
+      <tr><li class="list-inline-item"><a routerLink="/addcomputer" class="btn btn-info">Add computer</a></li></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
