@@ -13,6 +13,10 @@ import { ComputerListComponent } from './computer/computer-list/computer-list.co
 import { ComputerFormComponent } from './computer/computer-form/computer-form.component';
 import { EditcomputerFormComponent } from './computer/editcomputer-form/editcomputer-form.component';
 import {ComputerService} from './computer/computer.service';
+import {CpuService} from './computer/components/cpu/cpu.service';
+import {RamService} from './computer/components/ram/ram.service';
+import {RomService} from './computer/components/rom/rom.service';
+import {ComponentsListComponent} from './computer/components/components-list/components-list.component';
 
 
 @NgModule({
@@ -23,7 +27,8 @@ import {ComputerService} from './computer/computer.service';
     EditOfficeFormComponent,
     ComputerListComponent,
     ComputerFormComponent,
-    EditcomputerFormComponent
+    EditcomputerFormComponent,
+    ComponentsListComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,7 @@ import {ComputerService} from './computer/computer.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [OfficeService, ComputerService],
+  providers: [OfficeService, ComputerService, CpuService, RamService, RomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

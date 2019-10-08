@@ -6,13 +6,30 @@
         <th scope="col">#</th>
         <th scope="col">CPU</th>
         <th scope="col">RAM</th>
+        <th scope="col">ROM</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let computer of computers">
         <td>{{ computer.id }}</td>
-        <td>{{ computer.cpu }}</td>
-        <td>{{ computer.ram }}</td>
+        <td>
+          <span>{{"Company: " + computer.cpu.cpuCompany }}</span> <br/>
+          <span>{{"Name: " + computer.cpu.name }}</span> <br/>
+          <span>{{"Core speed: " + computer.cpu.coreSpeed }}</span> <br/>
+          <span>{{"L1 cache: " + computer.cpu.l1Cache }}</span> <br/>
+          <span>{{"L2 cache: " + computer.cpu.l2Cache }}</span> <br/>
+          <span>{{"Number of cores: " + computer.cpu.numberOfCores }}</span>
+        </td>
+        <td>
+          <span>{{"Ddr type: " + computer.ram.ddrType}}</span> <br/>
+          <span>{{"Memory clock speed: " + computer.ram.memoryClockSpeed}}</span> <br/>
+          <span>{{"Memory megabytes: " + computer.ram.memoryMegabytes}}</span>
+        </td>
+        <td>
+          <span>{{"Rom type: " + computer.rom.romType}}</span> <br/>
+          <span>{{"Capacity: " + computer.rom.capacity}}</span> <br/>
+          <span>{{"Speed: " + computer.rom.speed}}</span>
+        </td>
         <td><li class="list-inline-item"><a routerLink="/editcomputer/{{computer.id}}" class="btn btn-info">Edit</a></li></td>
         <td><button class="btn btn-danger" (click)="deleteComputer(computer)"> Delete</button></td>
       </tr>

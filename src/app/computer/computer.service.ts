@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Computer} from './computer';
+import {ComputerComponent} from './computerComponent';
 
 @Injectable()
 export class ComputerService {
@@ -9,7 +10,7 @@ export class ComputerService {
   private computerUrl: string;
 
   constructor(private http: HttpClient) {
-    this.computerUrl = 'http://localhost:8088/computer/';
+    this.computerUrl = 'http://localhost:8080/computer/';
   }
 
   public findAll(): Observable<Computer[]> {
@@ -20,8 +21,8 @@ export class ComputerService {
     return this.http.get<Computer>(this.computerUrl + id);
   }
 
-  public save(computer: Computer) {
-    return this.http.post<Computer>(this.computerUrl, computer);
+  public save(computer: ComputerComponent) {
+    return this.http.post<ComputerComponent>(this.computerUrl, computer);
   }
 
   public update(computer: Computer) {

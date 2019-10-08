@@ -6,11 +6,13 @@ import {EditOfficeFormComponent} from './office/editoffice-form/editoffice-form.
 import {EditcomputerFormComponent} from './computer/editcomputer-form/editcomputer-form.component';
 import {ComputerFormComponent} from './computer/computer-form/computer-form.component';
 import {ComputerListComponent} from './computer/computer-list/computer-list.component';
+import {ComponentsListComponent} from './computer/components/components-list/components-list.component';
 
 
 const routes: Routes = [
   {path: 'offices', component: OfficeListComponent},
   {path: 'computers', component: ComputerListComponent},
+  {path: 'components', component: ComponentsListComponent},
   {path: 'addoffice', component: OfficeFormComponent},
   {path: 'addcomputer', component: ComputerFormComponent},
   {path: 'editoffice/:id', component: EditOfficeFormComponent},

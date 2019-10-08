@@ -1,0 +1,52 @@
+
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Type</th>
+        <th scope="col">Characteristics</th>
+        <th scope="col">left in stock</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let cpu of cpu">
+        <td>{{ cpu.id }}</td>
+        <td>{{ cpu.type }}</td>
+        <td>
+          <span>{{"Company: " + cpu.cpuCompany }}</span> <br/>
+          <span>{{"Name: " + cpu.name }}</span> <br/>
+          <span>{{"Core speed: " + cpu.coreSpeed }}</span> <br/>
+          <span>{{"L1 cache: " + cpu.l1Cache }}</span> <br/>
+          <span>{{"L2 cache: " + cpu.l2Cache }}</span> <br/>
+          <span>{{"Number of cores: " + cpu.numberOfCores }}</span>
+        </td>
+        <td>{{cpu.leftInStock}}</td>
+      </tr>
+      <td></td>
+      <tr *ngFor="let ram of ram">
+        <td>{{ ram.id }}</td>
+        <td>{{ ram.type }}</td>
+        <td>
+          <span>{{"Ddr type: " + ram.ddrType}}</span> <br/>
+          <span>{{"Memory clock speed: " + ram.memoryClockSpeed}}</span> <br/>
+          <span>{{"Memory megabytes: " + ram.memoryMegabytes}}</span>
+        </td>
+        <td>{{ram.leftInStock}}</td>
+      </tr>
+      <td></td>
+      <tr *ngFor="let rom of rom">
+        <td>{{ rom.id }}</td>
+        <td>{{ rom.type }}</td>
+        <td>
+          <span>{{"Rom type: " + rom.romType}}</span> <br/>
+          <span>{{"Capacity: " + rom.capacity}}</span> <br/>
+          <span>{{"Speed: " + rom.speed}}</span>
+        </td>
+        <td>{{rom.leftInStock}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

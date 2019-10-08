@@ -12,8 +12,8 @@
         <label for="countofemployee">Count of employee</label>
         <input type="text" [(ngModel)]="office.countOfEmployee"
                class="form-control" id="countofemployee" name="countofemployee" placeholder="Enter count of employee"
-               required #email="ngModel">
-        <div [hidden]="!email.pristine" class="alert alert-danger">count of employee is required</div>
+               required #countofemployee="ngModel">
+        <div [hidden]="!countofemployee.pristine" class="alert alert-danger">count of employee is required</div>
       </div>
       <button type="submit" [disabled]="!officeForm.form.valid" class="btn btn-info">Submit</button>
     </form>

@@ -9,7 +9,7 @@ export class OfficeService {
   private officesUrl: string;
 
   constructor(private http: HttpClient) {
-    this.officesUrl = 'http://localhost:8088/office/';
+    this.officesUrl = 'http://127.0.0.1:8080/office/';
   }
 
   public findAll(): Observable<Office[]> {
@@ -21,11 +21,17 @@ export class OfficeService {
   }
 
   public addComputerToOfficeById(id: string, office: Office): Observable<Office> {
-    return this.http.put<Office>(this.officesUrl + office.id + 'addComputerToOfficeById/', id);
+    const req = this.http.put<Office>(this.officesUrl + office.id + '/addComputerToOfficeById/', id);
+    req.subscribe( response => {
+    const a = response;
+    });
+    return null; // req.pipe();
   }
 
   public removeComputerFromOfficeById(id: string, office: Office): Observable<Office> {
-    return this.http.put<Office>(this.officesUrl + office.id + 'removeComputerFromOfficeById/', id);
+    const req = this.http.put<Office>(this.officesUrl + office.id + '/removeComputerFromOfficeById/', id);
+    req.subscribe();
+    return null; // req.pipe();
   }
 
   public save(office: Office) {

@@ -1,21 +1,22 @@
 <div class="card my-5">
   <div class="card-body">
-    <form (ngSubmit)="onSubmit()" #officeForm="ngForm">
+    <form (ngSubmit)="onSubmit()" #computerForm="ngForm">
       <div class="form-group">
         <label for="CPU">CPU</label>
         <input type="text" [(ngModel)]="computer.cpu"
-               class="form-control" id="CPU" name="CPU" placeholder="Enter CPU"
-               required #name="ngModel">
+               class="form-control" id="CPU" name="CPU" placeholder="Enter CPU">
       </div>
-      <div [hidden]="!name.pristine" class="alert alert-danger">CPU is required</div>
       <div class="form-group">
         <label for="RAM">RAM</label>
         <input type="text" [(ngModel)]="computer.ram"
-               class="form-control" id="RAM" name="RAM" placeholder="RAM"
-               required #RAM="ngModel">
-        <div [hidden]="!RAM.pristine" class="alert alert-danger">RAM is required</div>
+               class="form-control" id="RAM" name="RAM" placeholder="Enter RAM">
       </div>
-      <button type="submit" [disabled]="!officeForm.form.valid" class="btn btn-info">Submit</button>
+      <div class="form-group">
+        <label for="ROM">ROM</label>
+        <input type="text" [(ngModel)]="computer.rom"
+               class="form-control" id="ROM" name="ROM" placeholder="Enter ROM">
+      </div>
+      <button type="submit" [disabled]="!computerForm.form.valid" class="btn btn-info">Submit</button>
     </form>
   </div>
 </div>

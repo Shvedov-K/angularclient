@@ -13,10 +13,21 @@ export class EditOfficeFormComponent {
 
   office: Office;
   id: string;
+  computerBuff: string;
 
   constructor(private route: ActivatedRoute, private router: Router, private officeService: OfficeService) {
     this.id = route.snapshot.params.id;
     officeService.findOfficeById(this.id).subscribe((res) => this.office = res);
+  }
+
+  addComputer() {
+    this.officeService.addComputerToOfficeById(this.computerBuff, this.office);
+    this.officeService.update(this.office).subscribe(result => this.gotoOfficeList());
+  }
+
+  removeComputer() {
+    this.officeService.removeComputerFromOfficeById(this.computerBuff, this.office);
+    this.officeService.update(this.office).subscribe(result => this.gotoOfficeList());
   }
 
   onSubmit() {
