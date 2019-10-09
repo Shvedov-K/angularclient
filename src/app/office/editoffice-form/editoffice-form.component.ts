@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {Office} from '../office';
 import {ActivatedRoute, Router} from '@angular/router';
 import {OfficeService} from '../office.service';
@@ -21,13 +21,13 @@ export class EditOfficeFormComponent {
   }
 
   addComputer() {
-    this.officeService.addComputerToOfficeById(this.computerBuff, this.office);
-    this.officeService.update(this.office).subscribe(result => this.gotoOfficeList());
+    this.officeService.addComputerToOfficeById(this.computerBuff, this.office)
+      .subscribe(result => this.gotoOfficeList());
   }
 
   removeComputer() {
-    this.officeService.removeComputerFromOfficeById(this.computerBuff, this.office);
-    this.officeService.update(this.office).subscribe(result => this.gotoOfficeList());
+    this.officeService.removeComputerFromOfficeById(this.computerBuff, this.office)
+      .subscribe(result => this.gotoOfficeList());
   }
 
   onSubmit() {

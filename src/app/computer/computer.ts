@@ -7,5 +7,4 @@ export class Computer {
   ram: Ram;
   cpu: Cpu;
   rom: Rom;
-  isUsed: string;
 }

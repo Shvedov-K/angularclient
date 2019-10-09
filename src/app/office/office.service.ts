@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Office} from './office';
 import { Observable } from 'rxjs';
+import {take} from 'rxjs/operators';
+import {of} from 'rxjs/internal/observable/of';
 
 @Injectable()
 export class OfficeService {
@@ -22,10 +24,11 @@ export class OfficeService {
 
   public addComputerToOfficeById(id: string, office: Office): Observable<Office> {
     const req = this.http.put<Office>(this.officesUrl + office.id + '/addComputerToOfficeById/', id);
-    req.subscribe( response => {
-    const a = response;
-    });
-    return null; // req.pipe();
+    req.pipe(take(1))
+      .subscribe( response => {
+        return of(response);
+      });
+    return of(null);
   }
 
   public removeComputerFromOfficeById(id: string, office: Office): Observable<Office> {
