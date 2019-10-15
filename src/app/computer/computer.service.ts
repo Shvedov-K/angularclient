@@ -25,11 +25,11 @@ export class ComputerService {
     return this.http.post<ComputerComponent>(this.computerUrl, computer);
   }
 
-  public update(computer: Computer) {
-    return this.http.put<Computer>(this.computerUrl + computer.id + '/updateComputerById/', computer);
+  public update(computer: Computer, computerComponent: ComputerComponent) {
+    return this.http.put<Computer>(this.computerUrl + computer.id + '/updateComputerById/', computerComponent);
   }
 
   public deleteComputer(computer) {
-    return this.http.delete(this.computerUrl + '/' + computer.id);
+    return this.http.delete(this.computerUrl + computer.id);
   }
 }

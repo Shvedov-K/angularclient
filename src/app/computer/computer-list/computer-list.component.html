@@ -7,6 +7,7 @@
         <th scope="col">CPU</th>
         <th scope="col">RAM</th>
         <th scope="col">ROM</th>
+        <th scope="col">Is used</th>
       </tr>
       </thead>
       <tbody>
@@ -30,10 +31,12 @@
           <span>{{"Capacity: " + computer.rom.capacity}}</span> <br/>
           <span>{{"Speed: " + computer.rom.speed}}</span>
         </td>
-        <td><li class="list-inline-item"><a routerLink="/editcomputer/{{computer.id}}" class="btn btn-info">Edit</a></li></td>
-        <td><button class="btn btn-danger" (click)="deleteComputer(computer)"> Delete</button></td>
+        <td>{{computer.isUsed}}</td>
+
+        <td><button class="btn btn-info" routerLink="/editcomputer/{{computer.id}}" [disabled]="computer.isUsed"> Edit</button></td>
+        <td><button class="btn btn-danger" (click)="deleteComputer(computer)" [disabled]="computer.isUsed"> Delete</button></td>
       </tr>
-      <tr><li class="list-inline-item"><a routerLink="/addcomputer" class="btn btn-info">Add computer</a></li></tr>
+      <tr><td><button class="btn btn-info" routerLink="/addcomputer"> Add computer</button></td></tr>
       </tbody>
     </table>
   </div>

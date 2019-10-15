@@ -3,17 +3,17 @@
     <form (ngSubmit)="onSubmit()" #computerForm="ngForm">
       <div class="form-group">
         <label for="CPU">CPU</label>
-        <input type="text" [(ngModel)]="computer.cpu"
+        <input type="text" [(ngModel)]="computerComponent.cpuId"
                class="form-control" id="CPU" name="CPU" placeholder="Enter CPU">
       </div>
       <div class="form-group">
         <label for="RAM">RAM</label>
-        <input type="text" [(ngModel)]="computer.ram"
+        <input type="text" [(ngModel)]="computerComponent.ramId"
                class="form-control" id="RAM" name="RAM" placeholder="Enter RAM">
       </div>
       <div class="form-group">
         <label for="ROM">ROM</label>
-        <input type="text" [(ngModel)]="computer.rom"
+        <input type="text" [(ngModel)]="computerComponent.romId"
                class="form-control" id="ROM" name="ROM" placeholder="Enter ROM">
       </div>
       <button type="submit" [disabled]="!computerForm.form.valid" class="btn btn-info">Submit</button>

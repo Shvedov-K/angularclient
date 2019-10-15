@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MatSliderModule } from '@angular/material/slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import {CpuService} from './computer/components/cpu/cpu.service';
 import {RamService} from './computer/components/ram/ram.service';
 import {RomService} from './computer/components/rom/rom.service';
 import {ComponentsListComponent} from './computer/components/components-list/components-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -31,10 +33,12 @@ import {ComponentsListComponent} from './computer/components/components-list/com
     ComponentsListComponent
   ],
   imports: [
+    MatSliderModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [OfficeService, ComputerService, CpuService, RamService, RomService],
   bootstrap: [AppComponent]
