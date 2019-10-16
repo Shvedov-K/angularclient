@@ -19,6 +19,7 @@ import {RamService} from './computer/components/ram/ram.service';
 import {RomService} from './computer/components/rom/rom.service';
 import {ComponentsListComponent} from './computer/components/components-list/components-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ComputerViewComponent } from './computer/computer-view/computer-view.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ComputerListComponent,
     ComputerFormComponent,
     EditcomputerFormComponent,
-    ComponentsListComponent
+    ComponentsListComponent,
+    ComputerViewComponent
   ],
   imports: [
     MatSliderModule,

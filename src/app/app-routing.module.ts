@@ -7,6 +7,7 @@ import {EditcomputerFormComponent} from './computer/editcomputer-form/editcomput
 import {ComputerFormComponent} from './computer/computer-form/computer-form.component';
 import {ComputerListComponent} from './computer/computer-list/computer-list.component';
 import {ComponentsListComponent} from './computer/components/components-list/components-list.component';
+import {ComputerViewComponent} from './computer/computer-view/computer-view.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'addoffice', component: OfficeFormComponent},
   {path: 'addcomputer', component: ComputerFormComponent},
   {path: 'editoffice/:id', component: EditOfficeFormComponent},
-  {path: 'editcomputer/:id', component: EditcomputerFormComponent}
+  {path: 'editcomputer/:id', component: EditcomputerFormComponent},
+  {path: 'viewcomputer/:id', component: ComputerViewComponent}
 ];
 
 @NgModule({

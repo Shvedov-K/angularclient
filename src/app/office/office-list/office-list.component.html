@@ -16,7 +16,7 @@
         <td>{{ office.countOfEmployee }}</td>
         <td>
           <div *ngFor="let computer of office.computerList">
-            {{ computer.id }} <br/>
+            {{ computer.id }} <a routerLink="/viewcomputer/{{computer.id}}" class="btn btn-info">View</a><br/>
           </div>
         </td>
         <td><li class="list-inline-item"><a routerLink="/editoffice/{{office.id}}" class="btn btn-info">Edit</a></li></td>

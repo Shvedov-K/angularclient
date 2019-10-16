@@ -21,6 +21,10 @@ export class ComputerService {
     return this.http.get<Computer>(this.computerUrl + id);
   }
 
+  public getComputerByIdOfAll(id: string): Observable<Computer> {
+    return this.http.get<Computer>(this.computerUrl + id + '/getComputerByIdOfAll/');
+  }
+
   public save(computer: ComputerComponent) {
     return this.http.post<ComputerComponent>(this.computerUrl, computer);
   }
